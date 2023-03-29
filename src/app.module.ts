@@ -2,6 +2,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
+import { CoffeeResolver } from './coffee/coffee.resolver';
 import { PostsResolver } from './posts/posts.resolver';
 import { PrismaService } from './prisma.service';
 
@@ -12,6 +13,6 @@ import { PrismaService } from './prisma.service';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
   ],
-  providers: [PrismaService, PostsResolver],
+  providers: [PrismaService, PostsResolver, CoffeeResolver],
 })
 export class AppModule {}

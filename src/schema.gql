@@ -2,6 +2,28 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Coffee {
+  id: ID!
+  name: String!
+  country: String!
+  elevation: Float!
+  process: String!
+  variety: String!
+  roaster: String!
+  acidity: Float!
+  sweetness: Float!
+  aftertaste: Float!
+  cleancup: Float!
+  balance: Float!
+  flavor: Float!
+  flavorText: String!
+  mousefeel: Float!
+  overall: Float!
+  score: Float!
+  comment: String!
+  favorite: Boolean!
+}
+
 type Post {
   id: ID!
   title: String!
@@ -11,8 +33,10 @@ type Post {
 
 type Query {
   posts: [Post!]!
+  coffee: [Coffee!]!
 }
 
 type Mutation {
   createPost(title: String!, content: String!): Post!
+  createCoffee(name: String!, country: String!, elevation: Float!, process: String!, variety: String!, roaster: String!, acidity: Float!, sweetness: Float!, aftertaste: Float!, cleancup: Float!, balance: Float!, flavor: Float!, flavorText: String!, mousefeel: Float!, overall: Float!, score: Float!, comment: String!, favorite: Boolean!): Coffee!
 }
